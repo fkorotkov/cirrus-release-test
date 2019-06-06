@@ -47,7 +47,7 @@ upload_task:
   install_script:
     - pip install --upgrade-strategy eager -U -r requirements-upload.txt
     - apt-get update
-    - apt-get install curl
+    - apt-get install -y curl
 
   script:
     - ./setup.py sdist bdist_wheel
