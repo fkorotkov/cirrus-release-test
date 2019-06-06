@@ -50,8 +50,8 @@ upload_task:
   script:
     - ./setup.py sdist bdist_wheel
     - ls -Al dist
-    - tar -tf dist/*.tar.*
-    - unzip -l dist/*.whl
+    - python -m tarfile -l dist/*.tar.*
+    - python -m zipfile -l dist/*.whl
     - ./.ci/upload-build.sh
 
 
