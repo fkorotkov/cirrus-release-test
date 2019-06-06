@@ -30,4 +30,8 @@ for fpath in "${files_to_upload[@]}"; do
 		$url_to_upload
 done
 
-twine upload "${files_to_upload[@]}"
+twine upload \
+	--repository-url "$TWINE_REPOSITORY_URL" \
+	--username "$TWINE_USER" \
+	--password "$TWINE_PASSWORD" \
+	"${files_to_upload[@]}"
