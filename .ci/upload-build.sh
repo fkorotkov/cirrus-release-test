@@ -23,8 +23,7 @@ for fpath in "${files_to_upload[@]}"; do
 	echo "Uploading '$fpath' to Github..."
 	name=$(basename "$fpath")
 	url_to_upload="https://uploads.github.com/repos/$CIRRUS_REPO_FULL_NAME/releases/$CIRRUS_RELEASE/assets?name=$name"
-	echo $url_to_upload
-	curl -X POST \
+	curl -i -X POST \
 		--data-binary @$fpath \
 		--header "Authorization: token $GITHUB_TOKEN" \
 		--header "Content-Type: $file_content_type" \
