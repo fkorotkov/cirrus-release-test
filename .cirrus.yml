@@ -2,7 +2,7 @@ container:
   image: alpine:latest
 
 env_task:
-  script: printenv
+  env_script: printenv
 
 upload_task:
   only_if: $CIRRUS_RELEASE != ""
