@@ -7,4 +7,3 @@ env_task:
 upload_task:
   only_if: $CIRRUS_RELEASE != ""
   script: printenv
-  
